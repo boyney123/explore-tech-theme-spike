@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SiteHeader renders correctly 1`] = `
+<section
+  className="main hero site-header"
+>
+  <div
+    className="hero-body"
+  >
+    <div
+      className="container has-text-centered"
+    >
+      <h1
+        className="title"
+      >
+        react.explore-tech.org
+      </h1>
+      <h2
+        className="subtitle"
+      >
+        An open source project to help developers learn, develop & explore.
+      </h2>
+      <a
+        className="button is-medium add-action contribute"
+        href="https://github.com/boyney123/react.explore-tech.org/blob/master/CONTRIBUTING.md#adding-a-material-to-the-website"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <i
+          className="fab fa-github"
+        />
+        Add Resource
+      </a>
+      <a
+        className="button is-medium add-action twitter"
+        href="https://twitter.com/intent/tweet?text=An%20open%20source%20project%20that%20lists%20resources%20to%20help%20developers%20explore%20React%20%F0%9F%91%8D.%0A%0A%20https%3A%2F%2Freact.explore-tech.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <i
+          className="fab fa-twitter"
+        />
+        Share with others
+      </a>
+      <p
+        className="mt20"
+      >
+        1
+         resource's for you to explore!
+      </p>
+      <div
+        className="badges"
+      >
+        <a
+          href="https://github.com/boyney123/react.explore-tech.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="github badge"
+            className="badges__github"
+            src="https://img.shields.io/github/stars/boyney123/react.explore-tech.org.svg?style=social"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;
