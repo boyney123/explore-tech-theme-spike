@@ -64,6 +64,20 @@ exports.onCreateNode = async ({
   }
 }
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          include: path.dirname(require.resolve('explore-tech-theme')),
+          use: [loaders.js()],
+        },
+      ],
+    },
+  })
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
