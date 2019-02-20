@@ -81,8 +81,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve(`src/templates/material-page/index.js`)
-  const categoryTemplate = path.resolve(`src/templates/category-page/index.js`)
+  const blogPostTemplate = path.resolve(
+    __dirname,
+    `src/templates/material-page/index.js`
+  )
+  const categoryTemplate = path.resolve(
+    __dirname,
+    `src/templates/category-page/index.js`
+  )
 
   return graphql(`
     {
