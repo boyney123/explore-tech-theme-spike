@@ -90,7 +90,7 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          Src: path.resolve(__dirname, 'src'),
+          Src: `${__dirname}/src`,
         },
         extensions: [],
       },
