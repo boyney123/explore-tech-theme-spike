@@ -80,6 +80,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "dependencies": {
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-page-creator": "^2.0.7"
   }
 }
