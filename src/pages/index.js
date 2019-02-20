@@ -38,7 +38,7 @@ const IndexPage = props => {
 
 export default IndexPage
 
-export const pageQuery = graphql`
+export const query = graphql`
   query CategoryIndex {
     allMarkdownRemark(sort: { order: ASC, fields: [fields___category] }) {
       edges {
