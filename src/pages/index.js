@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Category from '../components/Category'
@@ -8,46 +8,69 @@ import SiteHeader from '../components/SiteHeader'
 import 'bulma/css/bulma.css'
 
 const IndexPage = props => {
-  const { data: { allMarkdownRemark: { edges = [] } = {} } = {} } = props
-
-  // Get a unique list of categories, I think we can do this with GraphQL Query?
-  const categories = edges
-    .map(item => {
-      const { node } = item
-      const {
-        fields: { category },
-      } = node
-      return category
-    })
-    .filter((category, index, self) => {
-      return self.indexOf(category) === index
-    })
-
   return (
-    <Layout header={<SiteHeader count={edges.length} />}>
-      <div className="container is-fluid">
-        <div className="columns is-multiline">
-          {categories.map(item => {
-            return <Category key={item} name={item} />
-          })}
-        </div>
-      </div>
-    </Layout>
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              description
+              categoriesTest {
+                key
+                subtitle
+              }
+            }
+          }
+          allMarkdownRemark(sort: { order: ASC, fields: [fields___category] }) {
+            edges {
+              node {
+                fields {
+                  category
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        const {
+          allMarkdownRemark: { edges = [] } = {},
+          site: {
+            siteMetadata: { categoriesTest, title, description } = {},
+          } = {},
+        } = data
+
+        return (
+          <Layout
+            header={
+              <SiteHeader
+                count={edges.length}
+                title={title}
+                description={description}
+              />
+            }
+          >
+            <h1>{description}</h1>
+            <div className="container is-fluid">
+              <div className="columns is-multiline">
+                {categoriesTest.map(item => {
+                  return (
+                    <Category
+                      key={item.key}
+                      gat
+                      name={item.key}
+                      subtitle={item.subtitle}
+                    />
+                  )
+                })}
+              </div>
+            </div>
+          </Layout>
+        )
+      }}
+    />
   )
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query CategoryIndex {
-    allMarkdownRemark(sort: { order: ASC, fields: [fields___category] }) {
-      edges {
-        node {
-          fields {
-            category
-          }
-        }
-      }
-    }
-  }
-`
