@@ -58,7 +58,6 @@ const IndexPage = props => {
                   return (
                     <Category
                       key={item.key}
-                      gat
                       name={item.key}
                       subtitle={item.subtitle}
                     />
