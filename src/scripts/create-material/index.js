@@ -79,16 +79,16 @@ const script = async _args => {
     return process.exit(1)
   }
 
-  const { categories = {} } = siteMetadata
+  // const { categories = {} } = siteMetadata
 
-  if (!categories[category]) {
-    console.log(
-      chalk.red(
-        'Please use a supported Category type. If you want to create a new Category please check the documentation.'
-      )
-    )
-    return process.exit(1)
-  }
+  // if (!categories[category]) {
+  //   console.log(
+  //     chalk.red(
+  //       'Please use a supported Category type. If you want to create a new Category please check the documentation.'
+  //     )
+  //   )
+  //   return process.exit(1)
+  // }
 
   const newDirectory = path.resolve(__dirname, directory, category)
 
