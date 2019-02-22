@@ -51,7 +51,6 @@ const IndexPage = props => {
               />
             }
           >
-            <h1>{description}</h1>
             <div className="container is-fluid">
               <div className="columns is-multiline">
                 {categoriesTest.map(item => {

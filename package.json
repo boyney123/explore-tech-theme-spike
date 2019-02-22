@@ -33,7 +33,10 @@
     "add:lib": "node src/scripts/create-material/index.js Libraries",
     "add:framework": "node src/scripts/create-material/index.js Frameworks"
   },
-  "devDependencies": {
+  "peerDependencies": {
+    "gatsby": "^2.1.13"
+  },
+  "dependencies": {
     "bulma": "^0.7.4",
     "fuse.js": "^3.3.0",
     "gatsby": "^2.1.13",
@@ -73,14 +76,12 @@
     "puppeteer-core": "^1.11.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-page-creator": "^2.0.7"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "dependencies": {
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-page-creator": "^2.0.7"
   }
 }
