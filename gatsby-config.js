@@ -13,6 +13,8 @@ module.exports = {
      */
     description:
       'An open source project to help developers learn, develop & explore.',
+
+    github_url: '',
     /**
      * Url when clicking contribute button
      */
