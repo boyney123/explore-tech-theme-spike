@@ -17,10 +17,7 @@ const Layout = ({ children, count, header, siteMetadata }) => {
             siteMetadata {
               title
               description
-              categories {
-                key
-                subtitle
-              }
+              github_url
             }
           }
           allMarkdownRemark(sort: { order: ASC, fields: [fields___category] }) {
