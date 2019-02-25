@@ -122,6 +122,8 @@ exports.createPages = ({ actions, graphql }) => {
 
       const url = path.join('/', category.toLowerCase(), pathToMaterial)
 
+      console.log('CREATE PAGE', url)
+
       createPage({
         path: category,
         component: categoryTemplate,
