@@ -90,7 +90,7 @@ const script = async _args => {
   //   return process.exit(1)
   // }
 
-  const newDirectory = path.resolve(__dirname, directory, category)
+  const newDirectory = path.resolve(process.cwd(), './materials', category)
 
   if (repo.indexOf('github.com') === -1) {
     console.log(chalk.red('Please provide a valid GitHub Url.'))
