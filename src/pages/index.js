@@ -16,7 +16,7 @@ const IndexPage = props => {
             siteMetadata {
               title
               description
-              categoriesTest {
+              categories {
                 key
                 subtitle
               }
@@ -36,9 +36,7 @@ const IndexPage = props => {
       render={data => {
         const {
           allMarkdownRemark: { edges = [] } = {},
-          site: {
-            siteMetadata: { categoriesTest, title, description } = {},
-          } = {},
+          site: { siteMetadata: { categories, title, description } = {} } = {},
         } = data
 
         return (
@@ -53,7 +51,7 @@ const IndexPage = props => {
           >
             <div className="container is-fluid">
               <div className="columns is-multiline">
-                {categoriesTest.map(item => {
+                {categories.map(item => {
                   return (
                     <Category
                       key={item.key}
