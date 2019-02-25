@@ -4,10 +4,6 @@ import getPath from 'lodash/get'
 
 import { ConfigProvider } from './context'
 
-export default function({ config }) {
-  const context = {
-    config,
-  }
-
-  return <ConfigProvider value={context}>{children}</ConfigProvider>
+export default function({ config, children }) {
+  return <ConfigProvider value={{ ...config }}>{children}</ConfigProvider>
 }

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
 import './styles.css'
 
-const Navigation = () => {
+import useConfigProviderContext from '../ConfigProvider/context'
+
+export default function() {
+  const { title } = useConfigProviderContext()
   return (
     <nav
       className="nav is-clearfix"
@@ -11,7 +14,7 @@ const Navigation = () => {
       aria-label="main navigation"
     >
       <div class="is-pulled-left site-brand">
-        <Link to="/">react.explore-tech.org</Link>
+        <Link to="/">{title}</Link>
       </div>
       <div>
         <a
@@ -25,5 +28,3 @@ const Navigation = () => {
     </nav>
   )
 }
-
-export default Navigation
