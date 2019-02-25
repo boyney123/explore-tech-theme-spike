@@ -6,7 +6,7 @@ import './styles.css'
 import useConfigProviderContext from '../ConfigProvider/context'
 
 export default function() {
-  const { title } = useConfigProviderContext()
+  const { title, github_url } = useConfigProviderContext()
   return (
     <nav
       className="nav is-clearfix"
@@ -17,11 +17,7 @@ export default function() {
         <Link to="/">{title}</Link>
       </div>
       <div>
-        <a
-          className="is-pulled-right"
-          href="https://github.com/boyney123/react.explore-tech.org"
-          target="_blank"
-        >
+        <a className="is-pulled-right" href={github_url} target="_blank">
           GitHub
         </a>
       </div>
